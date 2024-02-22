@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <input type="text" id="m" />
     <button onclick="doiNgay()">Tính số ngày</button>
     <p id="d"></p>
     <script>
       function doiNgay() {
-        alert(document.getElementById("m").value);
         let month = +document.getElementById("m").value;
         let days = -1;
         if (
@@ -33,7 +32,12 @@
         }
         document.getElementById("d").innerHTML =
           "Tháng " + month + " có " + days + " ngày!";
+        if (days == -1) {
+          document.getElementById("d").innerHTML = "Tháng không tồn tại!";
+        } else {
+          document.getElementById("d").innerHTML =
+            "Tháng " + month + " có " + days + " ngày!";
+        }
       }
     </script>
-</body>
-</html>
+  </body>
