@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính lãi suất</h1>
+    <input type="text" id="tien" placeholder="Nhập tiền vay">
+    <input type="text" id="lai" placeholder="Nhập lãi suất" >
+    <input type="text" id="nam" placeholder="Nhập số năm">
+    <input type="button" onclick="tinhlai()" value="Tính lãi">
+    <p id="laisuat"></p>
+    <script>
+        function tinhlai() {
+          let tien = parseInt(document.getElementById("tien").value);
+          let phantram = parseFloat(document.getElementById("lai").value);
+          let nam = parseInt(document.getElementById("nam").value);
+          let lai = (tien * phantram) / 100;
+          document.getElementById("laisuat").innerText = "Tiền lãi: " + (tien + nam * lai);
+        }
+    </script>
+</body>
+</html>

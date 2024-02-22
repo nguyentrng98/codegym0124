@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính chu vi và diện tích hình tròn</h1>
+    <input type="text" id="R" placeholder="Nhập bán kính">
+    <input type="button" onclick="chuvi()" value="Tính chu vi">
+    <input type="button" onclick="dientich()" value="Tính diện tích">
+    <p id="htron"></p>
+    <script>
+        function chuvi() {
+            let r = parseFloat(document.getElementById("R").value);
+            document.getElementById("htron").innerText = "Chu vi: " + (2 * r * 3.14);
+    }
+
+        function dientich() {
+            let r = parseFloat(document.getElementById("R").value);
+            document.getElementById("htron").innerText = "Diện tích: " + (r * r * 3.14);
+    }
+    </script>
+</body>
+</html>
