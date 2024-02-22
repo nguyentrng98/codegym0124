@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: brown;
+        }
+        .x{
+            color: yellow;
+        }
+        .x,#y{
+            font-style: italic;
+        }
+        #y{
+            color: blueviolet;
+        }
+        div > p{
+            color: pink;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="color: bisque;">Inline: viết trực tiếp trong thẻ</h1>
+    <h2>viết trong cùng file(trong thẻ style)</h2>
+    <h2>viết trong cùng file(trong thẻ style)</h2>
+    <h2 class="x">viết trong cùng file(trong thẻ style)</h2>
+    <h2 class="x">viết trong cùng file(trong thẻ style)</h2>
+    <h2 class="x">viết trong cùng file(trong thẻ style)</h2>
+    <div class="x">div nè</div>
+    <div class="x">div nè</div>
+    <div id="y">div nè</div>
+    <div>div nè</div>
+    <!--thế nào là html cha và con-->
+    <div>
+        <p>A</p>
+    </div>
+    <p>B</p>
+    <div>
+        <p>C</p>
+    </div>
+</body>
+</html>

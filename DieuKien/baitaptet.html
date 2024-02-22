@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //1.Các cách khai báo biến: sử dụng từ khóa var, let, và const
+    //2.2.Có các kiểu dữ liệu cơ bản và phổ biến sau: Number, String, Boolean, Null, Object, Undefined, Symbol
+    //3.gán giá trị biến là kiểu nào thì biến có kiểu đó
+    //4.Có 5 cách để hiển thị chữ Hello ra từ JS:
+    console.log('Hello');
+    alert('Hello');
+    document.write('Hello');
+    document.getElementById('.....').innerHTML = 'Hello'
+    document.getElementById('.....').value = 'Hello'
+    //5.cách để nhập vào biến a với JS:
+    prompt()
+    document.getElementById('y').value
+    //6.in ra thẻ h1 ,img ,a với js:
+    document.write(<h1>Hello</h1>);
+    document.write('<a href=''></a>');
+    document.write('<img src="">');
+    //7.Nhập vào tên, in ra tên:
+    let ten = prompt("nhập vào tên");
+    alert(ten);
+    //8.Nhập vào a,in ra bình phương của a:
+    let a = prompt("nhập vào a :");
+    alert(a**2);
+    //9.Nhập vào tên, in ra tên với h1:
+    document.write("<h1>" + ten + "</h1>");
+    //10.Nhập vào đường dẫn cho biến src, in ra ảnh với nguồn ảnh là biến src với JS:
+    let s = prompt("nhập vào tên :");
+    document.write('<img src="' + s + '">');
+    //11.Nhập vào a,b,c. Kiểm tra xem a,b,c có thể là độ dài 3 cạnh của tam giác không?
+    //.a , b , c >0 và tổng 2 cạnh lớn hơn cạnh còn lại
+    let a = +prompt("Nhập vào a: ");
+    let b = +prompt("Nhập vào b: ");
+    let c = +prompt("Nhập vào c: ");
+    if (a >0 && b > 0 && c >0 &&a + b > c && a + c > b && b + c > a) {
+            alert("a b c là độ dài 3 cạnh của tam giác");
+        } else {
+            alert("a b c không là độ dài 3 cạnh của tam giác");
+        }
+    //12.Nhập vào a và b. Tính tổng các số từ a đến b   
+    let a12 = +prompt("Nhập vào a12: ");
+    let b12 = +prompt("Nhập vào b12: ");
+    alert(((a12 + b12) * (b12 - a12 + 1)) / 2);
+    //13.Nhập vào a, b. Viết phương trình giải phương trình bậc nhất ax + b =0
+    //ax + b = 0;
+    let a13 = prompt();
+      let b13 = prompt();
+      if (a13 == 0) {
+        if (b13 == 0) {
+          alert("Vô số nghiệm!");
+        } else {
+          alert("Vô nghiệm!");
+        }
+      } else {
+        alert("x = " + -b / a);
+      }
+    //15
+    // 15.Viết chương trình nhập vào số điện tiêu thụ, in ra số tiền phải trả.
+        Số điện từ 1 – 99: Giá 1 số là 1800
+        Số điện từ 100 – 199: Giá 1 số là 2000
+        Số điện từ 200 trở đi: Giá 1 số là 2000
+    let soDien = prompt();
+      let tien = 0;
+      if (soDien < 100) {
+        tien = soDien * 1800;
+      }
+      if (soDien >= 100 && soDien < 200) {
+        tien = 99 * 1800 + (soDien - 99) * 2000;
+      }
+      if (soDien >= 200) {
+        tien = 99 * 1800 + 100 * 2000 + (soDien-199)*2500;
+      }
+   </script>
+</body>
+</html>

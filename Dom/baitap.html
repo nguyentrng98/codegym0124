@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codegym</title>
+  <style></style>
+  <body>
+     <table style="width: 820px;">
+         <tr>
+            <th style="width: 200px;">Amount</th>
+            <th style="width: 300px;">From Cerrency</th>
+            <th style="width: 120px;">To Cerrency</th>
+            <th style="width: 200px;"></th>
+         </tr>
+         <tr>
+             <th><input type="text" id="monney" style="width: 200px; height: 30px;"></th>
+             <th>
+                <select name="From Cerrency" id="country_1" style="width: 120px; height: 30px;">
+                  <option value="1">VietNam</option>
+                  <option value="24000">USA</option>
+                  <option value="165">Janpan</option>
+                </select>
+             </th>
+             <th>
+                <select name="From Cerrency" id="country_2" style="width: 120px; height: 30px;">
+                    <option value="1">VietNam</option>
+                    <option value="24000">USA</option>
+                    <option value="165">Janpan</option>
+                </select>
+             </th>
+             <th style="width: 200px;">
+                <button id="Tính"
+                 onclick="doi()" 
+                 style="width: 120px; 
+                        height: 30px; 
+                        background-color: rgb(167, 121, 228); 
+                        border: 1px inset blue; 
+                        border-radius: 3px; color: aliceblue; 
+                        font-size: 15px;">Convert
+                </button>
+              </th>
+         </tr>
+     </table>
+     <h1 id="nav"></h1>
+
+     <script>
+        function doi() {
+            let tien = +document.getElementById('monney').value;
+            let a = +document.getElementById('country_1').value;
+            let b = +document.getElementById('country_2').value;
+
+            let tong = tien * a / b
+
+            document.getElementById('nav').innerText = 'Result:' + tong;
+        }
+     </script>
+  </body>
+  

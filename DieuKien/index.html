@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Điều kiện:
+        if(A) {
+            c
+        }
+        a-biểu thức điều kiện
+        x-1 doan code
+        Nếu a đúng => thực hiện x
+    -->
+    <script>
+        // nhập vào x, in ra ' haha' nếu x >18
+        //let x = prompt("nhập vào x :");
+        //if (x > 18) {
+        //   alert("HAHA");
+        //}
+        // nhập x,nếu x chăn in'chẵn' , nếu x lẻ in 'lẻ'
+        //let x = prompt("nhập vào x :");
+        //if  (x % 2 == 0) {
+        //alert("chẵn");
+        //}
+        //if (x % 2 != 0) {
+        //alert("lẻ");
+        //}
+        //nhập vào a và b, kiểm tra xem a chia hết cho b không?
+        //let a = +prompt("nhập vào a :");
+        //let b = +prompt("nhập vào b :");
+        //if (a % b ==0) {
+        //    alert("a chia hết cho b!");
+        //} else {
+        //   alert("a không chia hết cho b!");
+        //}
+        //nhập vào a , b , c .in ra số lớn nhất trong 3 số.
+        let a = +prompt("Nhập vào a: ");
+
+        let b = +prompt("Nhập vào b: ");
+
+        let c = +prompt("Nhập vào c: ");
+
+        if (a >= b && a >= c) {
+
+            alert("a lớn nhất");
+        }
+        if (b >= a && b >= c) {
+
+            alert("b lớn nhất");
+        }
+        if (c >= b && c >= a) {
+
+            alert("c lớn nhất");
+        }
+        //nhập vào điểm , nếu:
+        //điểm < 5 ; yếu
+        //5 =< điểm < 8.5 ; khá
+        // 8.5<= điểm ; giỏi
+        let diem = + prompt("nhập vào điểm");
+        if(diem<5) {
+            alert("yếu");
+        }
+        if(diem >= 5 && diem < 8.5) {
+            alert("khá");
+        }
+        if(diem >= 8.5) {
+            alert("giỏi");
+        }
+    </script>
+</body>
+</html>
