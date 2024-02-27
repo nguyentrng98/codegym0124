@@ -11,10 +11,80 @@
     <h1 id="y"></h1>
     <script>
         //nhap xuất
-        function f1(parms) {
+        function f1() {
             let z = document.getElementById("x").value;
             document.getElementById("y").innerHTML = "z" *10;
         }
+        //biến, kiểu dữ liệu, toán tử
+        let x = 10 ;
+        x = 20;
+        const z = 10;
+        z = 20;
+        //string , number , boolean
+        let y = "123" //string
+        let t = 30; //number
+        let w = true; // boolean
+        y = 100; // number
+        //toán tử
+        //1. toán tử số học+ , - , * , / , ++ , --
+        //2.toán tử logic &&, ||
+        //3. toán tử so sánh < ,> , <= , >= , == ,!=
+        //4. toán tử gán : += ,/= ,*= ,-=,%=
+        let x = 10;
+        x++; // x = x +1;
+        let y = 10;
+        y--; // y = y-1
+        // let x = 20; // =>x = 21
+        let y = x++ // y =20
+        let a = 20; //=> a =21
+        ley b = a++ // b = 21
+        //điều kiện ; if , else , && , ||
+
     </script>
+    A ,B ,C, D : biểu thức điều kiện
+    x,y ,z, t : đoạn code cần chạy
+    ----------------------
+    if(A) {
+        x
+    }
+    y
+    => nếu A đsung thì x chạy , y luôn chạy
+    ----------------------
+    if(A && B) {
+        x
+    }
+    y
+    => nếu A và B cùng đúng thì x mới chạy còn y thì luôn chạy
+    if(A || B) {
+        x
+    }
+    y
+    => nếu A hoặc B đúng thì x mới chạy còn y thì luôn chạy
+    if(A) {
+        x
+    } else {
+        y
+    }
+    z
+    => nếu a đúng thì x chạy còn sai thì y chạy
+    vd: A: n >5 => khi nào y chạy: n <= 5
+    if(A) {
+        x
+    } else if(B) {
+        y
+    } else {
+        z
+    }
+    =>nếu a đúng thì x chạy ; a sai b đúng thì y z,a sai b sai thì z chạy
+    if(A) {
+        x
+        if(B) {
+            y
+        }
+        z
+    } else {
+        t
+    }
+    =>A đúng x và z chạy, A đúng B đúng thì y chạy, A sai thì t chạy
 </body>
 </html>
