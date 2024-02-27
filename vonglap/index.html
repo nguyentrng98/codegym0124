@@ -29,15 +29,50 @@
     //    dem++;
     //}
     // Nhập vào a, b. In ra các số chẵn từ a đến b.
-    let a = +prompt("Nhập vào a: ");
-    let b = +prompt("Nhập vào b: ");
-
-    let dem = a;
-      while (dem <= b) {
-        if (dem % 2 == 0) {
-          document.write(dem + "<br>");
+    //let a = +prompt("Nhập vào a: ");
+    //let b = +prompt("Nhập vào b: ");
+    //let dem = a;
+    //  while (dem <= b) {
+    //    if (dem % 2 == 0) {
+    //      document.write(dem + "<br>");
+    //    }
+    //    dem++;
+    //  }
+    //let a = +prompt("Nhập vào a: ");
+    //let b = +prompt("Nhập vào b: ");
+    //for (let dem = a; dem <= b; dem++) {
+    //    if (dem % 2 == 0) {
+    //      document.write(dem + "<br>");
+    //    }
+    //  }
+      // Nhập vào a, b. In chẵn trong h1 và lẻ trong h2 từ a đến b
+      let x = +prompt("nhập vào x :");
+      let y = +prompt("nhập vào y :");
+      for (let i = x ; i <=y ; i++) {
+        if(i %2 ==0) {
+            document.write("<h1>" + i + "</h1>");
+        } else {
+            document.write("<h2>" + i + "</h2>");
         }
-        dem++;
+      }
+      // Nhập vào a, b, c. In ra các số chẵn lớn hơn c từ đến b.
+      let a = +prompt("Nhập vào a: ");
+      let b = +prompt("Nhập vào b: ");
+      let c = +prompt("Nhập vào c: ");
+      for(let i = a ;i <= b; i++) {
+        if(i % 2 == 0 && i > c) {
+            document.write(i + "<br>");
+        }
+      }
+
+
+      // Nhập vào a, b. Tính tích các số từ a đến b
+      let a = +prompt("Nhập vào a: ");
+      let b = +prompt("Nhập vào b: ");
+      let tich = 1;
+      while (a <= b) {
+        tich = tich * a;
+        a++;
       }
     //while (A) {
     //    x
