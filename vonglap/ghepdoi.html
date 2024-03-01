@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nam = +prompt("số lượng nam: ");
+        let nu = +prompt("số lượng nữ: ");
+        if(nam<nu) {
+            alert('số cặp khác giới là:' +nam);
+            alert('số cặp đồng giới là:' +(nam-nu)/2);
+        }
+        if(nam>nu) {
+            alert('số cặp khác giới là:' +nu);
+            alert('số cặp đồng giới là:' +(nu-nam)/2);
+        }
+        if(nam==nu) {
+            alert('số cặp khác giới là:' +nam);
+        }
+    </script>
+</body>
+</html>
