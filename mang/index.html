@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Mảng? - là 1 biến đặc biệt - nó có thể lưu trữ nhiều giá trị bên trong
+        Cú pháp? let xyz = [ 3 , 4 , 5 , 23 , 1, "HaHa"];
+        mảng quản lý theo vị trí và bắt đầu từ 0
+        trích xuất 1 phần từ :xyz[5] = "HaHa";
+        số lượng phàn tử trong mảng : xyz.length = 6
+        duyệt mảng :
+        for (let i = 0; i < xyz.length ; i++) {
+            document.write(xyz[i] + " ");
+        }
+    -->
+    <script>
+        let xyz = [ 3 , 34 , 25 , 23 , 12, 15];
+        //in ra các phần tử trong mảng
+        //for (let i = 0; i < xyz.length ; i++) {
+        //   document.write(xyz[i] + " ");
+        //}
+        //in ra các phần tử giá trị chẵn trong mảng
+        //for (let i = 0 ; i < xyz.length ; i++) {
+        //    if (xyz[i] % 2 == 0) {
+        //        document.write(xyz[i] + " ");
+        //    }
+        //}
+        //in ra các phần tử trong mảng, chẵn thì trong thẻ p , lẻ thì trong thẻ h3
+        //for (let i = 0 ; i < xyz.length ; i++) {
+        //    if (xyz[i] % 2 == 0) {
+        //        document.write("<p>"+xyz[i] + "</p>");
+        //    }
+        //        if (xyz[i] % 2 != 0) {
+        //            document.write("<h3>"+xyz[i] + "</h3>");
+        //        }
+        //    }
+        //}
+        //in ra các phần tử tại vị trí chẵn
+        //for (let i = 0 ; i < xyz.length ; i++) {
+        //    if (i % 2 == 0) {
+        //        document.write(xyz[i] + " ");
+        //    }
+        //}
+        // in ra tổng của các phần tử > 20.
+        //let tong = 0;
+        //for (let i = 0 ; i < xyz.length ; i++) {
+        //    if (xyz[i] > 20) {
+        //        tong += xyz[i];
+        //       
+        //    }
+        //}
+        //document.write(tong);
+        //in ra trung bình cộng các phần tử chia hết cho 3 trong mảng
+        //let sum = 0;
+        //let dem = 0;
+        //for (i = 0; i < xyz.length; i++) {
+        //    if (xyz[i] % 3 == 0) {
+        //        sum += xyz[i];
+        //        dem++;
+        //    }
+        //}
+        //document.write(sum/dem);
+    //tìm giá trị lớn nhất trong mảng
+    let A = xyz[0];
+    for (let i = 0; i < xyz.length; i++) {
+        if (A < xyz[i]) {
+            A = xyz[i];
+        }        
+    }
+    document.write(A);
+
+    </script>
+</body>
+</html>

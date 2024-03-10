@@ -13,13 +13,33 @@
     let tich = 1;
     for (let i =a ;i <= b ; i++) {
         if(i %2 == 0) {
-            tich = tich *i ;
+            tich *= i ;
         }
     }
-    document.write(
-      "Tổng hai số từ " + `${c}` + " đến " + `${d}` + " là: " + tong
-    );
+    document.write(tich + "<br>");
+    //2.tính tổng các số chia hết cho 3 và lớn hơn 2
+    let a = +prompt("nhập vào a :");
+    let b = +prompt("nhập vào b :");
+    let tong = 0;
+    for (let i = a ;i <= b ; i++) {
+        if(i >2 && i % 3 ==0) {
+            tong + = i;
 
+        }
+    }
+    document.write(tong + "<br>");
+    //3.đếm số lượng số chia hết cho 3
+    let a = +prompt("nhập vào a :");
+    let b = +prompt("nhập vào b :");
+    let dem = 0;
+    for(let i =a ;i <= b ; i++) {
+        if(i %3 == 0) {
+            dem += 1;
+        }
+    }
+    document.write(dem + "<br>");
+    //4.nhập vào x , kiểm tra x có phải số nguyên tố không
+    
 </script>
 </body>
 </html>
