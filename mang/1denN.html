@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //BTVN Kiểm tra xem một mảng có chứa tất cả các số từ 1 đến n không.
+        let n = +prompt("nhập vào n: ");
+        let arr =[ 2, 3 ,1 ,2 ,3, 5 ,6];
+        let check = "arr chứa toàn bộ các số từ 1 -> n";
+        for (let i = 1; i <= n; i++) {
+            if(arr.indexOf(i) == -1) {
+                check = "arr không chứa toàn bộ các số từ 1 -> n";
+                break;
+            }
+        }
+        document.write(check);
+    </script>
+</body>
+</html>

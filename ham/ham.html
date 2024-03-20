@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        hàm được hieur là cú pháp gom code và cho phép dùng nhiều lần mà không cần viết lại
+cú pháp:    funcion ten(x , y ,z...) {
+           A
+           return t
+        }
+        x , y , z ...:đầu vào của hàm
+        t: đầu ra của hàm
+        A:đoạn code xử lý
+    -->
+    <script>
+        function tinhtong(a,b) {
+            return a + b;
+        }
+        let x = tinhtong(10,20);
+        alert(x);
+        alert(tinhtong(10,20));
+
+        function inra(a,b) {
+            for (let i=a; i <= b; i++) {
+                document.write(i + "<br>");
+            }
+        }
+        inra(10,20);
+        inra(20,100);
+    </script>
+</body>
+</html>

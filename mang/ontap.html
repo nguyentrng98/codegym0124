@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        -Mảng : biến đặc biệt - lưu được 1 giá trị trong 1 cái tên
+        -Cách khai báo , cách duyệt , cách truy xuất
+    -->
+    <script>
+        //let arr= [23 ,12 , 43 , 4 , 5 , 12]; //cách khai báo
+        //arr[2] = 10; // cách truy xuất
+        //for (let i = 0 ; i < arr.length ; i++) {
+        //    document.write(arr[i] + "<br>");
+        //}
+        //tìm max : 5 5 4 3 1 5 4 2 =>5
+        //tìm max thứ 2: 5 5 4 3 1 5 4 2 =>4
+        let arr = [5 , 5 , 3 , 5 , 4 , 2];
+        //let max = arr[0];
+        //for (let i = 0 ; i < arr.length ; i++) {
+        //    if (arr[i] > max) {
+        //        max = arr[i];
+        //    }
+        //}
+        //let max2 = -999;
+        //for (let i = 0 ; i < arr.length ; i++) {
+        //    if (arr[i] > max2 && arr[i] < max) {
+        //        max2 = arr[i];
+        //    }
+        //}
+       // document.write("Max2 là " + max2);
+        //Nhập vào x, in ra vị trí của x ở trong mảng(vd:x= 4 => in ra 3.x =5 =>0 , 1 , 4)
+        //let x = +prompt("nhập vào x: ");
+        //for (let i = 0 ; i < arr.length ; i++) {
+        //    if (x == arr[i]) {
+        //        document.write(i + " ");
+        //    }
+        //}
+        //tìm max và vị trí của max
+        let max = arr[0];
+        let vt = 0; 
+        for (let i = 0 ; i < arr.length ; i++) {
+            if (arr[i] > max ) {
+                max = arr[i];
+                vt = i;
+            }
+        }
+        document.write(max + " " + vt);
+        //đếm số lần xuất hiện của từng phần tử trong mảng.
+
+    </script>
+</body>
+</html>

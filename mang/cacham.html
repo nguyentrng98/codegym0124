@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        let a = [1 , 2 ,3, 5,];
+        thêm: a.push(10) =>[1 , 2 ,3, 5, 10];
+        sửa : a[2] = 100; =>[1 , 2 ,100, 5, 10];
+        xóa: a.splice(x , y , z):x là vị trí muốn thực hiện xóa;y là số lượng phần tử muốn xóa,z là phần tử muốn thêm
+        a.splice(2,1) =>[1 , 2 , 5, 10];
+        a = [22,14,7,28,9];
+        a.splice(1, 3) =>[22, 9]
+        tìm vị trí :let b = a.indexof(14) =>b = 1;
+        let c =a.indexof(28) => c =3;
+        let d =a.indexof(200) =>d = -1;
+        a.splice(x , y , z):
+        -x là vị trí muốn thực hiện xóa
+        -y là số lượng phần tử muốn xóa
+        -z là phần tử muốn thêm
+    -->
+    <script>
+        // let a = [1 , 2 ,3, 5,];
+        // alert("truoc: " + a);
+        // a.splice(2, 0 , 10)
+        // alert("sau: " + a);
+        //nhập vào n là số lượng phần tử trong mảng
+        //nhập vào n phần tử
+        //in ra mỗi phần tử 1 dòng
+        // let n = + prompt("nhập vào n số lượng phần tử: ");
+        // let arr = [];
+        // for (let i = 0 ; i< n ; i++) {
+        //    let x = +prompt("nhập vào phần tử thứ " + i);
+        //    arr.push(x);
+        // }
+        // for (let i = 0 ; i< arr.length ; i++) {
+        //     document.write(arr[i] + "<br>");
+        // }
+        //nhập vào các phần tử của mảng cho đến khi nhập -1 thì dừng.
+        //in ra mỗi phần tử 1 dòng
+        let arr = [];
+        let x;
+        for (let i = 0 ; x != -1; i++) {
+           x = +prompt("nhập vào phần tử thứ " + i);
+           arr.push(x);
+        }
+        for (let i = 0 ; i< arr.length ; i++) {
+            document.write(arr[i] + "<br>");
+        }
+        //cách 2
+        let arr = [];
+        let x;
+        for (let i = 0 ;; i++) {
+            x = +prompt("nhập vào phần tử thứ " + i);
+            if (x == -1) {
+                break; //tất cả các vòng lặp găp break đều phải dừng
+                // gặp continue thì n bỏ qua -1 và vẫn chạy tiếp tục
+            }
+           arr.push(x);
+        }
+        for (let i = 0 ; i< arr.length ; i++) {
+            document.write(arr[i] + "<br>");
+        }
+    </script>
+</body>
+</html>

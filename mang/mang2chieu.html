@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Mảng 2 chiều : là mảng mà trong đó có phần là 1 mảng
+        
+    -->
+    <script>
+        let arr = [
+            [1 , 22, 3 , 5, 6],
+            [7 , 6 , 29],
+            [55, 3 ,9 ,42],
+        ];
+        // arr[1] = [7 , 6 ,9]
+        //arr[2] [3] = 42
+        //arr.length = 3
+        //arr[0].length = 5
+        //tìm max và vị trí của max.
+        //duyệt mảng
+        // for (let i = 0 ; i < arr.length ; i++) {
+        //     for (let j = 0 ; j < arr[i].length;j++) {
+        //         document.write(arr[i][j] + " ");
+        //     }
+        //     document.write("<br>");
+        // }
+        // //in ra các phần tử > 10
+        // for (let i = 0 ; i < arr.length ; i++) {
+        //     for (let j = 0 ; j < arr[i].length;j++) {
+        //         if (arr[i][j] > 10) {
+        //         document.write(arr[i][j] + " ");
+        //         }
+        //     }
+        //     document.write("<br>");
+        // }
+        // tính tổng  các phần tử chẵn
+        let tong = 0;
+        for (let i = 0 ; i < arr.length ; i++) {
+            for (let j = 0 ; j < arr[i].length;j++) {
+                if (arr[i][j] % 2 == 0) {
+                tong += arr[i][j]
+                }
+            }
+        }
+        document.write(tong);
+    </script>
+</body>
+</html>
