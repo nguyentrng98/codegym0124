@@ -6,18 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="https://www.pngall.com/wp-content/uploads/5/Sports-Ball-Transparent.png"
-    id = "x";
-    style="width: 100px; position: absolute; top: 100px; left: 200px;"/>
+    <img
+      src="https://www.pngall.com/wp-content/uploads/5/Sports-Ball-Transparent.png"
+      id="x"
+      style="width: 100px; position: absolute; left: 200px; top: 100px"
+    />
     <script>
-        let speedX = 1;
-        setInterval(() => {
-            let xx = document.getElementById('x');
-            xx.style.left = parseInt(xx.style.left) + speedX + "px"; // =>xx.style.left = '200px' + 20 + 'px' =>2000px20px
-            if (parseInt(xx.style.left) >= window.innerWidth - 100 || parseInt(xx.style.left) <= 0) {
-                speedX = - speedX;
+      let speedX = 0;
+      let speedY = 1;
+      setInterval(() => {
+        xx = document.getElementById("x");
+        xx.style.left = parseInt(xx.style.left) + speedX + "px";
+        xx.style.top = parseInt(xx.style.top) + speedY + "px";
+        if (
+          parseInt(xx.style.left) >= window.innerWidth - 100 ||
+          parseInt(xx.style.left) <= 0
+        ) {
+          speedX = -speedX;
         }
-        } ,1);
+        if (
+          parseInt(xx.style.top) >= window.innerHeight - 100 ||
+          parseInt(xx.style.top) <= 0
+        ) {
+          speedY = -speedY;
+        }
+      }, 1);
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "a") {
+          speedX = -1;
+          speedY = 0;
+        }
+        if (e.key == "d") {
+          speedX = 1;
+          speedY = 0;
+        }
+        if (e.key == "w") {
+          speedX = 0;
+          speedY = -1;
+        }
+        if (e.key == "s") {
+          speedX = 0;
+          speedY = 1;
+        }
+      });
         //nếu nó chạm vào cạnh phải thì ngay lập tức bay về bên trái để tiếp tục
         //window.interwidth
         //đập qua đập lại

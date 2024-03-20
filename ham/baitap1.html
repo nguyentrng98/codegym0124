@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1.Viết hàm tính bình phương của 1 số bất kỳ được đưa vào.gọi hàm vừa xây dựng được.
+        2.viết hàm tính diện tích, hàm tính chu vi hình tròn,gọi hàm vừa xây dựng được
+        3. viết hàm tính giai thừa của 1 số nguyên bất kì được đưa vào.gọi hàm vừa xây dựng được
+    -->
+    <script>
+        //Bài 1 Viết hàm tính bình phương của một số bất kỳ đưa vào. Gọi hàm vừa xây dựng được
+        function binhPhuong(a) {
+            return a*a;
+        }
+        document.write("bình phương là: " + binhPhuong(2));
+        document.write("<br>");
+        //Bài 2 Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+        function dienTich(x) {
+            let pi = 3.14;
+            let s = pi*(x*x);
+            return s;
+        }
+        document.write("diện tích hình tròn là: " + dienTich(2));
+        document.write("<br>");
+
+        function chuVi(x) {
+            let pi = 3.14;
+            let c = pi * (x * 2);
+            return c;
+        }
+        document.write("chu vi hình tròn là: " + chuVi(4));
+        document.write("<br>");
+
+        // Bài 3 Viết hàm tính giai thừa của một số nguyên bất kỳ. Gọi hàm vừa xây dựng được
+        function giaiThua(x) {
+            let n = 1;
+            for (let i = 2; i <= x; i++) {
+                n *= i;
+            }
+            return n;
+        }
+        document.write("giai thừa là: " + giaiThua(6));
+        document.write("<br>");
+
+    </script>
+</body>
+</html>
