@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bảng cửu chương</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Bảng cửu chương</th>
+            </tr>
+        </thead>
+        <tbody id="multiplicationTable">
+        </tbody>
+    </table>
+
+    <script>
+        // Sử dụng 2 vòng lặp lồng nhau để tạo bảng cửu chương
+        let tableContent = "";
+        for (let i = 1; i <= 9; i++) {
+            tableContent += "<tr>";
+            for (let j = 1; j <= 9; j++) {
+                tableContent += "<td>" + i + " x " + j + " = " + (i * j) + "</td>";
+            }
+            tableContent += "</tr>";
+        }
+        document.getElementById("multiplicationTable").innerHTML = tableContent;
+    </script>
+</body>
+</html>

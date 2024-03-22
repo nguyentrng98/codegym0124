@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="kq"></h1>
+    <script>
+        let a = parseInt(prompt('Nhap vao so nguyen duong'));
+        let mang = [];
+        let i = 0;
+        while (i < a) {
+            if (i <= 1) {
+                mang.push(1);
+            } else {
+                mang.push(mang[i - 1] + mang[i - 2]);
+            }
+            i++;
+        }
+        document.getElementById('kq').innerText = 'Day so Fibonacci la: ' + mang.join(', ');
+    </script>
+</body>
+</html>

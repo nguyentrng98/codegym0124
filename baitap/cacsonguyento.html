@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers</title>
+</head>
+<body>
+    <h2>20 Số Nguyên Tố Đầu Tiên</h2>
+    <ul id="primeNumbers"></ul>
+
+    <script>
+        // Bước 1: Khai báo biến số nguyên numbers và nhập giá trị từ bàn phím
+        let numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần in ra:"));
+
+        // Bước 2: Khai báo biến count và gán giá trị 0
+        let count = 0;
+
+        // Bước 3: Khai báo biến N và gán giá trị 2
+        let N = 2;
+
+        // Bước 4: Trong khi count < numbers
+        while (count < numbers) {
+            // Kiểm tra xem N có phải là số nguyên tố không
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            // Nếu N là số nguyên tố, in ra giá trị của N và tăng giá trị của count lên 1
+            if (isPrime) {
+                document.getElementById("primeNumbers").innerHTML += "<li>" + N + "</li>";
+                count++;
+            }
+            // Tăng giá trị của N lên 1 để kiểm tra số tiếp theo
+            N++;
+        }
+    </script>
+</body>
+</html>

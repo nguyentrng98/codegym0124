@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="choi()">Choi</button>
+    <script>
+        function choi() {
+            let maxinput = parseInt(prompt('Nhap vao so lon nhat'));
+            let randomNumber = Math.floor(Math.random() * maxinput) + 1;
+            for (i = 0; i < 3; i++) {
+                let input = parseInt(prompt('Nhap so may man'));
+                if (input == randomNumber) {
+                alert('Chuc mung ban da chon dung!');
+                break;
+                } else {
+                    alert('Moi ban nhap lai');
+                    continue;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>
