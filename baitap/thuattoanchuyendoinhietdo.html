@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ C sang F</title>
+</head>
+<body>
+<h1> Chuyện đổi nhiệt độ C sang F</h1>
+<p id="Ketqua"></p>
+
+<p>C đã nhập:</p>
+<p id="abc"></p>
+
+<script>
+    //F = C  x  9/5 + 32
+  let Cnhap = +prompt ('Hãy nhập số C')
+  let Fketqua = (Cnhap * 1.8) + 32
+    document.getElementById('Ketqua').innerHTML = `${Fketqua}°F`
+    document.getElementById('abc').innerHTML = `${Cnhap}°C`
+</script>
+</body>
+</html>
