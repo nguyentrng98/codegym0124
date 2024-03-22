@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai 1: Khai báo các biến
+        var i = 10; 
+        var f = 20.5;
+        var b = true;
+        var s = "Hà Nội";
+
+        // In ra kết quả
+        document.write("i = " + i + "<br/>");
+        document.write("f = " + f + "<br/>");
+        document.write("b = " + b + "<br/>");
+        document.write("s = " + s + "<br/>");
+    </script>
+    <script>
+        // bai 2: Khai báo biến width và height
+        let width = 20;
+        let height = 10; 
+        let area = width * height;
+        console.log("Diện tích hình chữ nhật là: " + area);
+    </script>
+    <script>
+        //bai 3 :
+        let a = parseInt(prompt("Nhập số a: "));
+        let b = parseInt(prompt("Nhập số b: "));
+        let isDivisible = a % b === 0;
+        if (isDivisible) {
+            alert(a + " là bội số của " + b);
+        } else {
+            alert(a + " không phải là bội số của " + b);
+        }
+    </script>
+</body>
+
+</html>
