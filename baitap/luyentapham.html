@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Bài 1
+    let a = +prompt("Số thứ 1:");
+    let b = +prompt("Số thứ 2:");
+    
+    function lonBe(a,b) {
+        if (a > b) {
+            alert("Số thứ nhất lơn hơn!");
+        }
+        if (a <= b) {
+            alert(`Tổng hai số là ${a} + ${b} = ${a+b}`);
+        }
+    }
+    // lonBe(a,b);
+    // Bài 2
+    // Tạo mảng chứa tên ngôi sao
+    const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    
+    // Tạo mảng chứa tên chòm sao tương ứng
+    const constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    
+    // Hàm tìm chòm sao dựa trên tên ngôi sao
+    function findConstellation(starName) {
+        for (let i = 0; i < stars.length; i++) {
+            if (stars[i] === starName) {
+                return constellations[i];
+            }
+        }
+        return null; // Trả về null nếu không tìm thấy
+    }
+    
+    // Hỏi người dùng về tên ngôi sao
+    const inputStar = prompt("Nhập tên của ngôi sao:");
+    
+    // Gọi hàm và hiển thị kết quả
+    const constellation = findConstellation(inputStar);
+    if (constellation) {
+        alert(`Ngôi sao "${inputStar}" thuộc chòm sao ${constellation}.`);
+    } else {
+        alert(`Không tìm thấy thông tin về ngôi sao "${inputStar}".`);
+    }
+    // Bài 3
+    function tinhBinhPhuong() {
+        let binhPhuong = a ** 2;
+        alert(binhPhuong);
+    }
+    tinhBinhPhuong(a);
+    // Bài 4
+    // Hàm tính diện tích hình tròn
+    function calculateArea(radius) {
+        return Math.PI * radius * radius;
+    }
+
+    // Hàm tính chu vi hình tròn
+    function calculatePerimeter(radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // Gọi hàm tính diện tích và chu vi hình tròn với bán kính là 5
+    const radius = 5;
+    const area = calculateArea(radius);
+    const perimeter = calculatePerimeter(radius);
+
+    console.log("Diện tích của hình tròn:", area);
+    console.log("Chu vi của hình tròn:", perimeter);
+
+    // Bài 5
+    // Hàm tính giai thừa của một số nguyên
+        function factorial(number) {
+            if (number === 0 || number === 1) {
+                return 1;
+            } else {
+                let result = 1;
+                for (let i = 2; i <= number; i++) {
+                    result *= i;
+                }
+                return result;
+            }
+        }
+
+        // Gọi hàm tính giai thừa với một số nguyên bất kỳ
+        const inputNumber = 5; // Bạn có thể thay đổi giá trị này
+        const result = factorial(inputNumber);
+        console.log(`Giai thừa của ${inputNumber} là:`, result);
+
+        // Bài 6
+        // Hàm kiểm tra xem ký tự là ký tự số hay không
+        function isDigit(character) {
+            return /^\d$/.test(character);
+        }
+
+        // Kiểm tra ký tự nhập vào
+        const inputCharacter = '7'; // Bạn có thể thay đổi ký tự này
+        const isNumber = isDigit(inputCharacter);
+
+        if (isNumber) {
+            console.log(`Ký tự "${inputCharacter}" là ký tự số.`);
+        } else {
+            console.log(`Ký tự "${inputCharacter}" không phải là ký tự số.`);
+        }
+
+        // Bài 7
+        // Hàm tìm số nguyên nhỏ nhất
+        function findMinInteger(a, b, c) {
+            return Math.min(a, b, c);
+        }
+
+        // Gọi hàm và hiển thị kết quả
+        const num1 = 10;
+        const num2 = 5;
+        const num3 = 8;
+
+        const minInteger = findMinInteger(num1, num2, num3);
+        console.log("Số nguyên nhỏ nhất là:", minInteger);
+
+        // Bài 8
+        // Hàm kiểm tra xem một số có phải là số nguyên dương không
+        function isPositiveInteger(number) {
+            return number > 0 && Number.isInteger(number);
+        }
+
+        // Kiểm tra số nhập vào
+        const inputNumber = 10; // Bạn có thể thay đổi số này
+        const isPositive = isPositiveInteger(inputNumber);
+
+        if (isPositive) {
+            console.log(`${inputNumber} là số nguyên dương.`);
+        } else {
+            console.log(`${inputNumber} không phải là số nguyên dương.`);
+        }
+        // Bài 9
+        // Hàm đảo ngược mảng số nguyên
+        function reverseArray(arr) {
+            return arr.reverse();
+        }
+
+        // Mảng số nguyên ban đầu
+        const originalArray = [1, 2, 3, 4, 5]; // Bạn có thể thay đổi mảng này
+
+        // Đảo ngược mảng và hiển thị kết quả
+        const reversedArray = reverseArray(originalArray);
+        console.log("Mảng số nguyên sau khi đảo ngược:", reversedArray);
+
+        // Bài 10
+        // Hàm kiểm tra ký tự có xuất hiện trong mảng không và trả về số lần xuất hiện
+        function countOccurrences(arr, char) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === char) {
+                    count++;
+                }
+            }
+            return count > 0 ? count : -1;
+        }
+
+        // Mảng ký tự ban đầu
+        const charArray = ['a', 'b', 'c', 'a', 'd', 'e', 'f']; // Bạn có thể thay đổi mảng này
+        const character = 'a'; // Ký tự cần kiểm tra
+
+        // Kiểm tra ký tự và hiển thị kết quả
+        const occurrences = countOccurrences(charArray, character);
+        if (occurrences !== -1) {
+            console.log(`Ký tự "${character}" xuất hiện ${occurrences} lần trong mảng.`);
+        } else {
+            console.log(`Ký tự "${character}" không xuất hiện trong mảng.`);
+        }
+
+
+    </script>
+</body>
+</html>
