@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="write"></h1>
     <script>
-        let c = +prompt('Mời bạn nhập nhiệt độ');
-        f = (9*c)/5 + 32;
-        console.log(f);
-        document.getElementById('write').innerHTML = 'Độ F là: ' + f;
+        let value = null;
+        do {
+    value = prompt("Nhập vào số từ 1 -> 10");
+} while (value < 1 || value > 10);
+alert("Số bạn vừa nhập là " + value);
     </script>
 </body>
 </html>
