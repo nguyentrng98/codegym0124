@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game Simple</title>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <div id="carogame"></div>
+    <script>
+        // Khai báo mảng 2 chiều để lưu trạng thái của bảng Caro
+        var board = [];
+        for (let i = 0; i < 5; i++) {
+            board[i] = [];
+            for (let j = 0; j < 5; j++) {
+                board[i][j] = "-";
+            }
+        }
+
+        // Function để thay đổi giá trị khi người dùng nhấn nút
+        function changeValue() {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            if (positionX >= 0 && positionX < 5 && positionY >= 0 && positionY < 5) {
+                board[positionX][positionY] = "x"; // Thay đổi giá trị tại vị trí được chọn thành "x"
+                renderBoard(); // Gọi hàm render lại bảng
+            } else {
+                alert("Invalid position!");
+            }
+        }
+
+        // Function để render lại bảng sau khi thay đổi giá trị
+        function renderBoard() {
+            let data = "";
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+            document.getElementById("carogame").innerHTML = "<hr/>" + data;
+        }
+
+        // Gọi hàm renderBoard() lần đầu khi trang được tải
+        renderBoard();
+    </script>
+</body>
+</html>
