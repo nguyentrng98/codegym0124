@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: lightgray;
+}
+    </style>
+</head>
+<body>
+    <h1>Caro Game</h1>
+    <div id="board"></div>
+
+    <script >
+        const board = document.getElementById('board');
+let currentPlayer = 'X';
+let winner = null;
+let cells = [];
+
+function initializeBoard() {
+    for (let i = 0; i < 3; i++) {
+        cells[i] = [];
+        for (let j = 0; j < 3; j++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.dataset.row = i;
+            cell.dataset.col = j;
+            cell.addEventListener('click', handleClick);
+            cells[i][j] = cell;
+            board.appendChild(cell);
+        }
+    }
+}
+
+function handleClick() {
+    if (!winner) {
+        const row = this.dataset.row;
+        const col = this.dataset.col;
+
+        if (!cells[row][col].textContent) {
+            cells[row][col].textContent = currentPlayer;
+
+            if (checkWinner()) {
+                winner = currentPlayer;
+                alert(`Player ${winner} wins!`);
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+    }
+}
+
+function checkWinner() {
+    // Check rows
+    for (let i = 0; i < 3; i++) {
+        if (cells[i][0].textContent && cells[i][0].textContent === cells[i][1].textContent && cells[i][1].textContent === cells[i][2].textContent) {
+            return true;
+        }
+    }
+
+    // Check columns
+    for (let i = 0; i < 3; i++) {
+        if (cells[0][i].textContent && cells[0][i].textContent === cells[1][i].textContent && cells[1][i].textContent === cells[2][i].textContent) {
+            return true;
+        }
+    }
+
+    // Check diagonals
+    if (cells[0][0].textContent && cells[0][0].textContent === cells[1][1].textContent && cells[1][1].textContent === cells[2][2].textContent) {
+        return true;
+    }
+
+    if (cells[0][2].textContent && cells[0][2].textContent === cells[1][1].textContent && cells[1][1].textContent === cells[2][0].textContent) {
+        return true;
+    }
+
+    return false;
+}
+
+initializeBoard();
+
+    </script>
+</body>
+</html>
