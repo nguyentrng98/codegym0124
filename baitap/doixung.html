@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(s) {
+    // Chuyển đổi chuỗi thành chữ cái thường và loại bỏ các ký tự không phải là chữ cái
+    s = s.toLowerCase().replace(/[^a-z]/g, '');
+
+    // Base case: Nếu độ dài chuỗi là 0 hoặc 1, chuỗi là đối xứng
+    if (s.length <= 1) {
+        return true;
+    }
+
+    // Kiểm tra ký tự đầu và ký tự cuối của chuỗi
+    if (s[0] !== s[s.length - 1]) {
+        return false; // Nếu khác nhau, chuỗi không đối xứng
+    }
+
+    // Đệ quy với chuỗi bên trong (loại bỏ ký tự đầu và cuối)
+    return isPalindrome(s.slice(1, s.length - 1));
+}
+
+// Kiểm tra từ đối xứng
+const word = "Racecar"; // Bạn có thể thay đổi từ này
+const result = isPalindrome(word);
+
+if (result) {
+    console.log(`Từ "${word}" là từ đối xứng.`);
+} else {
+    console.log(`Từ "${word}" không phải là từ đối xứng.`);
+}
+
+    </script>
+</body>
+</html>
