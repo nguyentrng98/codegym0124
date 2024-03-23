@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai 1
+        const myColor = ["Red", "Green", "White", "Black"];
+        let result = "";
+
+        for (let i = 0; i < myColor.length; i++) {
+            // Thêm dấu phẩy vào sau mỗi phần tử trừ phần tử cuối cùng
+            if (i < myColor.length - 1) {
+                result += myColor[i] + ",";
+            } else {
+                result += myColor[i];
+            }
+        }
+
+        console.log(result); // "Red,Green,White,Black"
+        // bai 2
+        Cách 1: Sử dụng vòng lặp for
+
+JavaScript
+function insertDash(num) {
+                let result = "";
+                let isEven = false; // Biến kiểm tra số chẵn
+
+                for (let i = 0; i < num.length; i++) {
+                    const digit = parseInt(num[i]);
+
+                    // Kiểm tra số chẵn
+                    if (digit % 2 === 0) {
+                        isEven = true;
+                    } else {
+                        // Nếu gặp số lẻ
+                        if (isEven) {
+                            // Thêm dấu - vào trước số lẻ
+                            result += "-";
+                        }
+                        isEven = false;
+                    }
+
+                    // Thêm chữ số vào chuỗi kết quả
+                    result += digit;
+                }
+
+                // Xử lý trường hợp số chẵn cuối cùng
+                if (isEven) {
+                    result += "-";
+                }
+
+                return result;
+            }
+
+const input = "025468";
+        const output = insertDash(input);
+
+        console.log(`Input: ${input}`);
+        console.log(`Output: ${output}`);
+        //bai 3
+        function toUpperCase(str) {
+            let result = "";
+
+            for (let i = 0; i < str.length; i++) {
+                const charCode = str.charCodeAt(i);
+
+                // Kiểm tra ký tự chữ thường
+                if (charCode >= 97 && charCode <= 122) {
+                    // Chuyển đổi sang chữ hoa
+                    result += String.fromCharCode(charCode - 32);
+                } else {
+                    // Giữ nguyên ký tự
+                    result += str[i];
+                }
+            }
+
+            return result;
+        }
+
+        const input = "The Quick Brown Fox";
+        const output = toUpperCase(input);
+
+        console.log(`Input: ${input}`);
+        console.log(`Output: ${output}`);
+    </script>
+</body>
+
+</html>
