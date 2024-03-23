@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Apple {
+    constructor() {
+        this.weight = 10; // Khối lượng mặc định của quả táo
+    }
+
+    getWeight() {
+        return this.weight;
+    }
+}
+
+class Human {
+    constructor(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+    }
+
+    speak(words) {
+        console.log(words);
+    }
+
+    eat(apple) {
+        if (apple.getWeight() > 0) {
+            console.log(`${this.name} ăn một miếng táo`);
+            this.weight++;
+            apple.weight--;
+        } else {
+            console.log('Hết táo rồi!');
+        }
+    }
+
+    checkAppleWeight(apple) {
+        if (apple.getWeight() > 0) {
+            console.log('Quả táo còn ' + apple.getWeight() + ' đơn vị');
+        } else {
+            console.log('Hết táo rồi!');
+        }
+    }
+
+    getInfo() {
+        return `Tên: ${this.name}, Giới tính: ${this.gender}, Cân nặng: ${this.weight} đơn vị`;
+    }
+}
+
+// Tạo đối tượng Apple
+const apple = new Apple();
+
+// Tạo đối tượng Human cho Adam và Eva
+const adam = new Human('Adam', 'Nam', 70);
+const eva = new Human('Eva', 'Nữ', 60);
+
+// Mô phỏng việc Adam và Eva ăn táo cho đến khi hết
+while (apple.getWeight() > 0) {
+    adam.eat(apple);
+    eva.eat(apple);
+}
+
+console.log(adam.getInfo());
+console.log(eva.getInfo());
+
+    </script>
+</body>
+</html>
