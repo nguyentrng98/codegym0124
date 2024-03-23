@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý sản phẩm</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Quản lý sản phẩm</h2>
+
+<!-- Bước 2: Tạo một mảng chứa danh sách sản phẩm -->
+<script>
+    let productList = [];
+
+    // Bước 3: Xây dựng các hàm
+    function displayProducts() {
+        let table = "<table><tr><th>Số thứ tự</th><th>Tên sản phẩm</th><th>Xoá</th></tr>";
+        productList.forEach((product, index) => {
+            table += `<tr><td>${index + 1}</td><td>${product}</td><td><button onclick="deleteProduct(${index})">Xoá</button></td></tr>`;
+        });
+        table += "</table>";
+        document.getElementById("productList").innerHTML = table;
+    }
+
+    function addProduct() {
+        let productName = document.getElementById("productName").value;
+        if (productName.trim() !== "") {
+            productList.push(productName);
+            displayProducts();
+            document.getElementById("productName").value = "";
+            alert(`Đã thêm sản phẩm "${productName}" vào danh sách.`);
+        } else {
+            alert("Vui lòng nhập tên sản phẩm.");
+        }
+    }
+
+    function editProduct(index) {
+        let newName = prompt("Nhập tên mới cho sản phẩm:");
+        if (newName !== null && newName.trim() !== "") {
+            productList[index] = newName;
+            displayProducts();
+        }
+    }
+
+    function deleteProduct(index) {
+        let deletedProduct = productList.splice(index, 1);
+        displayProducts();
+        alert(`Đã xoá sản phẩm "${deletedProduct}" khỏi danh sách.`);
+    }
+</script>
+
+<!-- Bước 4: Gọi hàm hiển thị danh sách sản phẩm -->
+<div id="productList"></div>
+
+<!-- Bước 5: Gọi hàm thêm một sản phẩm vào danh sách -->
+<h3>Thêm sản phẩm mới</h3>
+<input type="text" id="productName" placeholder="Nhập tên sản phẩm">
+<button onclick="addProduct()">Thêm</button>
+
+<!-- Bước 6: Gọi hàm sửa một sản phẩm trong danh sách -->
+<h3>Sửa sản phẩm</h3>
+<p>Click vào tên sản phẩm để sửa:</p>
+
+<!-- Bước 7: Gọi hàm xoá một sản phẩm trong danh sách -->
+</body>
+</html>
