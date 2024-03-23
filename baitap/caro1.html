@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #board {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    }
+
+    .cell {
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+    <script>
+        const board = document.getElementById('board');
+const cells = [];
+let currentPlayer = 'X';
+
+// Create cells
+for (let i = 0; i < 20; i++) {
+    cells[i] = [];
+    for (let j = 0; j < 20; j++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.dataset.row = i;
+        cell.dataset.col = j;
+        cell.addEventListener('click', handleClick);
+        board.appendChild(cell);
+        cells[i][j] = cell;
+    }
+}
+
+function handleClick(event) {
+    const row = event.target.dataset.row;
+    const col = event.target.dataset.col;
+
+    if (!cells[row][col].textContent) {
+        cells[row][col].textContent = currentPlayer;
+        checkWinner(row, col);
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+}
+
+function checkWinner(row, col) {
+    const directions = [
+        [-1, 0], [1, 0], // vertical
+        [0, -1], [0, 1], // horizontal
+        [-1, -1], [1, 1], // diagonal \
+        [-1, 1], [1, -1] // diagonal /
+    ];
+
+    for (const [dx, dy] of directions) {
+        let count = 1;
+        let x = parseInt(row) + dx;
+        let y = parseInt(col) + dy;
+
+        while (x >= 0 && x < 20 && y >= 0 && y < 20 && cells[x][y].textContent === currentPlayer) {
+            count++;
+            x += dx;
+            y += dy;
+        }
+
+        x = parseInt(row) - dx;
+        y = parseInt(col) - dy;
+
+        while (x >= 0 && x < 20 && y >= 0 && y < 20 && cells[x][y].textContent === currentPlayer) {
+            count++;
+            x -= dx;
+            y -= dy;
+        }
+
+        if (count >= 5) {
+            alert(currentPlayer + ' wins!');
+            return;
+        }
+    }
+}
+
+    </script>
+</body>
+</html>

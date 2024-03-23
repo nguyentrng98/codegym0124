@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rat {
+    constructor(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.isAlive = true;
+    }
+
+    squeak() {
+        console.log("Chít, chít");
+    }
+
+    die() {
+        this.isAlive = false;
+    }
+}
+
+class Cat {
+    constructor(name, weight, maxSpeed) {
+        this.name = name;
+        this.weight = weight;
+        this.maxSpeed = maxSpeed;
+    }
+
+    meow() {
+        console.log("Meo meo");
+    }
+
+    catchRat(rat) {
+        if (this.maxSpeed > rat.speed) {
+            console.log("Cat caught the rat!");
+            this.weight += rat.weight;
+            rat.die();
+        } else {
+            console.log("Rat is too fast for the cat to catch.");
+        }
+    }
+}
+
+// Khởi tạo đối tượng Rat và Cat
+const rat = new Rat("Jerry", 0.2, 5.0);
+const cat = new Cat("Tom", 3.0, 10.0);
+
+// Kêu của chuột và mèo
+rat.squeak();
+cat.meow();
+
+// Mèo bắt chuột và ăn chuột
+cat.catchRat(rat);
+
+// In trạng thái của chuột và mèo
+console.log("Rat is alive: " + rat.isAlive);
+console.log("Cat's weight after eating: " + cat.weight);
+
+    </script>
+</body>
+</html>

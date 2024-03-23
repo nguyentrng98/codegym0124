@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature {
+    constructor(celsius) {
+        if (celsius < -273) {
+            throw new Error("Nhiệt độ không thể nhỏ hơn -273 độ C.");
+        }
+        this.celsius = celsius;
+    }
+
+    toFahrenheit() {
+        return this.celsius * 9 / 5 + 32;
+    }
+
+    toKelvin() {
+        return this.celsius + 273.15;
+    }
+}
+
+// Sử dụng lớp Temperature
+const temperature = new Temperature(25);
+
+// Hiển thị nhiệt độ F và độ Kenvin tương ứng
+console.log('Nhiệt độ F: ', temperature.toFahrenheit());
+console.log('Nhiệt độ Kenvin: ', temperature.toKelvin());
+
+    </script>
+</body>
+</html>

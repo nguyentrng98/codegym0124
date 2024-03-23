@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Remote {
+    constructor(code) {
+        this.code = code;
+    }
+
+    changeChannel(tv, channel) {
+        tv.setChannel(channel);
+        console.log(`TV is now tuned to channel ${channel}.`);
+    }
+
+    changeVolume(tv, volumeChange) {
+        tv.setVolume(tv.getVolume() + volumeChange);
+        console.log(`Volume is now set to ${tv.getVolume()}.`);
+    }
+}
+
+class TiVi {
+    constructor() {
+        this.channel = 1;
+        this.volume = 10;
+        this.isTurnedOn = false;
+    }
+
+    setChannel(channel) {
+        this.channel = channel;
+    }
+
+    getChannel() {
+        return this.channel;
+    }
+
+    setVolume(volume) {
+        this.volume = volume;
+    }
+
+    getVolume() {
+        return this.volume;
+    }
+
+    turnOn() {
+        this.isTurnedOn = true;
+        console.log("TV is turned on.");
+    }
+
+    turnOff() {
+        this.isTurnedOn = false;
+        console.log("TV is turned off.");
+    }
+}
+
+// Khởi tạo đối tượng TiVi và Remote
+const tv = new TiVi();
+const remote = new Remote(12345);
+
+// Bật tivi
+tv.turnOn();
+
+// Chuyển đến kênh 7
+remote.changeChannel(tv, 7);
+
+// Dùng remote chuyển đến kênh 3
+remote.changeChannel(tv, 3);
+
+// Tăng âm lượng lên 2 đơn vị
+remote.changeVolume(tv, 2);
+
+// Dùng remote tắt tivi
+tv.turnOff();
+
+    </script>
+</body>
+</html>

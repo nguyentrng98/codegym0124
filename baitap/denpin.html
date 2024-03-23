@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Battery {
+    constructor() {
+        this.energy = 0;
+    }
+
+    setEnergy(energy) {
+        this.energy = energy;
+    }
+
+    getEnergy() {
+        return this.energy;
+    }
+
+    decreaseEnergy() {
+        if (this.energy > 0) {
+            this.energy--;
+        }
+    }
+}
+
+class FlashLamp {
+    constructor() {
+        this.status = false;
+        this.battery = null;
+    }
+
+    setBattery(battery) {
+        this.battery = battery;
+    }
+
+    getBatteryInfo() {
+        if (this.battery) {
+            return this.battery.getEnergy();
+        } else {
+            return "No battery";
+        }
+    }
+
+    light() {
+        if (this.status && this.battery && this.battery.getEnergy() > 0) {
+            this.battery.decreaseEnergy();
+            return "Lighting";
+        } else {
+            return "Not lighting";
+        }
+    }
+
+    turnOn() {
+        this.status = true;
+    }
+
+    turnOff() {
+        this.status = false;
+    }
+}
+
+// Khởi tạo đối tượng Battery và FlashLamp
+let battery = new Battery();
+battery.setEnergy(10);
+
+let flashLamp = new FlashLamp();
+flashLamp.setBattery(battery);
+
+// Hiển thị thông tin và trạng thái đèn
+console.log("Battery info:", flashLamp.getBatteryInfo());
+console.log("Light:", flashLamp.light());
+
+// Bật đèn và hiển thị thông tin
+console.log("Turn on");
+flashLamp.turnOn();
+console.log("Light:", flashLamp.light());
+console.log("Battery info:", flashLamp.getBatteryInfo());
+
+// Tắt đèn và hiển thị thông tin
+console.log("Turn off");
+flashLamp.turnOff();
+console.log("Light:", flashLamp.light());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Bulb {
+    constructor() {
+        this.isOn = false;
+    }
+
+    turnOn() {
+        this.isOn = true;
+        console.log("Bulb is on.");
+    }
+
+    turnOff() {
+        this.isOn = false;
+        console.log("Bulb is off.");
+    }
+
+    isOn() {
+        return this.isOn;
+    }
+}
+
+class Switch {
+    constructor(bulb) {
+        this.bulb = bulb;
+    }
+
+    press() {
+        if (this.bulb.isOn()) {
+            this.bulb.turnOff();
+        } else {
+            this.bulb.turnOn();
+        }
+    }
+}
+
+// Khởi tạo đối tượng Bulb và Switch
+const bulb = new Bulb();
+const switchButton = new Switch(bulb);
+
+// Bật tắt công tắc 10 lần
+for (let i = 1; i <= 10; i++) {
+    console.log("Switching " + i + "...");
+    switchButton.press();
+}
+
+    </script>
+</body>
+</html>
