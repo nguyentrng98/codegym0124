@@ -20,47 +20,7 @@
             tb = tong/dem;
             return tb;
         }
-        document.write("Điểm trung bình là: " + findAvg([1,2,3,4,5,6,7,8,9,10]) + "<br>");
-        //cau 2
-        let xyz = [1, 5, 24, 6, 10, 50, -2];
-      function insertNumbertoArray() {
-        let a = +prompt("nhập số nguyên muốn thêm");
-        let index = +prompt("nhập vị trí muốn trèn");
-        if (index > xyz.length || index < 0) {
-          return abc;
-        } else {
-          xyz.splice(index, 0, a);
-          return xyz;
-        }
-      }
-
-      document.write("mảng" + insertNumbertoArray() +"<br>");
-      //câu3
-      function SNT(a){
-            if(a < 2)
-                return false;
-
-            for(let i=2 ; i<a-1 ;i++){
-                if(a % i == 0){
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        function sumOfListPrime(x){
-            let tong = 0;
-            let a = 2;
-            let dem =0;
-           for(let i= 0;dem < x; i++) {
-                if(SNT(a) == true) {
-                    tong +=dem;
-                }
-                dem++;
-            }
-            return tong;
-        }
-        alert(sumOfListPrime(15));
+        document.write("Điểm trung bình là: " + findAvg([1,2,3,4,5,6,7,8,9,10]));
     </script>
 </body>
 </html>
