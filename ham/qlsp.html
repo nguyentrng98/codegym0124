@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qlsp</title>
+</head>
+
+<body>
+    <button onclick="showlist()">list</button>
+    <button onclick="showformadd()">add</button>
+    <div id="disp"></div>
+    <script>
+        let listproduct = ['ip15', 's23', 'note 9'];
+        showlist()
+        function showlist() {
+            let str = '<h1>danh sách sản phẩm</h1>';
+            str += `<p>số lượng sản phẩm: ${listproduct.length}</P>`;
+            for (let i = 0; i < listproduct.length; i++) {
+                str += `<h3>${listproduct[i]}<button onclick="edit(${i})">edit</button></h3>`
+            }
+            document.getElementById('disp').innerHTML = str;
+        }
+        function showformadd() {
+            let str ='<input id="inp"> <button onclick="add()">create</buttom>'
+            document.getElementById('disp').innerHTML = str;
+        }
+        function add() {
+            listproduct.push(document.getElementById('inp').value);
+            showlist();
+        }
+        function edit(index) {
+            let str =`<input id="inp" value="${listproduct[index]}"> <button onclick="save(${index})">save</buttom>`
+            document.getElementById('disp').innerHTML = str;
+        }
+        function save(index) {
+            listproduct[index] = document.getElementById('inp').value;
+            showlist();
+        }
+    </script>
+</body>
+
+</html>

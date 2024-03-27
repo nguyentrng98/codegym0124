@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        OOP: lập trình hướng đối tượng
+        Khái niệm:OOP là 1 cách tổ chức dữ liệu giúp mô tả thông tin cần quản lý dễ hơn
+        Đối tượng là 1 biến đặc biệt (bên trong nó sẽ có nhiều phần tử có tên)
+        Cú pháp :let a = {}
+        Cách dùng a.name
+        Lớp:
+    -->
+    <script>
+        // let a = {
+        //     name: 'NAL',
+        //     age: 18,
+        //     isPoor: true,
+        //     addres: 'TB'
+        // }
+        // alert(a["age"]);
+        // alert(a.addres);
+        // tạo 2 đối tượng có tên :A , B . điểm 8 ,10 .xếp hạng KHÁ ,GIỎI
+        // let x = {
+        //     name: 'A',
+        //     score: '8',
+        //     xrank: 'Khá',
+        // }
+        // let y = {
+        //     name: 'B',
+        //     score: '10',
+        //     xrank: 'giỏi',
+        // }
+         let a = {
+             name: 'NAL',
+             age: 18,
+             isPoor: true,
+             addres: 'TB',
+             f1: function () {
+                alert("haha");
+             },
+         };
+         //a.f1();
+         // lớp là bộ khung để tạo ra các đối tượng có tên các phàn tử giống nhau
+        //  class student {
+        //     constructor(x, y ,z) {
+        //         this.name = x;
+        //         this.age = y;
+        //         this.score = z;
+        //     }
+        //     f2() {
+        //         alert(this.name + "," + this.age + "," + this.score);
+        //     }
+        //  }
+        //  let s1 = new student("ABC",20,10);
+        //  let s2 = new student("CDEF",20,8);
+        //  s1.f2();
+        //  s2.f2();
+         //tạo lớp sản phẩm:id , name , price , quantity và hàm geti4() để hiện thông tin của sản phẩm
+         //tạo ra 1 đối tượng từ lớp đó
+         class sp {
+            constructor(id,name,price,quantity) {
+                this.id =id;
+                this.name =name;
+                this.price =price;
+                this.quantity =quantity;
+
+            }
+            getin4() {
+                alert(this.id + "," + this.name + "," + this.price + "," + this.quantity);
+            }
+         } 
+         let s1 = new sp(1,"XYZ",10000,10);
+         s1.getin4();
+    </script>
+</body>
+</html>

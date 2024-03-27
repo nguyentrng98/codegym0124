@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rắn săn mồi</title>
+</head>
+<body>
+    <img src="https://play-lh.googleusercontent.com/Qi0_2w9oMDTJN6PXZQXFbfk1WkFcETJXummGP1Dua_KJ_Dvewx5Pf3PRrY43_FmXkas" height="60" width="80" style="left: 200px; top: 22px;position: relative">
+    <div class="display" style="left: 160px ; top: 20px; position: absolute; color: red">
+</div>
+<div id="score" style="left: 500px; top: 0px">Điểm</div>
+<canvas id="canvas" height="500" width="500"></canvas>
+    <script>
+    let background = "black"; // mau nen
+    let worm_color = "blue"; // mau con sau
+    let food_color = "red";// mau thuc an de hien thi
+
+    //ve muc play
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext('2d');
+    canvas.width = canvas.height = 500;
+
+    let fr = 20; // frame: Khung .
+    let s = 10;
+    let t = canvas.width / s;
+    //
+    let pos;
+    let vel;
+    let food;
+    let worm;
+
+    function init() {
+        pos = {x: 10, y: 10}; // vi tri bat dau cua con Sau
+        vel = {x: 0, y: 0};
+        worm = [ //tao con sau bang mang
+            {x: 8, y: 10},
+            {x: 9, y: 10},
+            {x: 10, y: 10},
+        ]
+        randomFood(); // goi ham function food
+    }
+
+    init();
+    // function cho random food
+    function randomFood() {
+        food = {
+            x: Math.floor(Math.random() * t),
+            y: Math.floor(Math.random() * t),
+        }
+        for (let cell of worm) {
+            if (cell.x === food.x && food.y === cell.y) {  //va cham Worm vs Food
+                return randomFood(); // an xong thi random food
+            }
+        }
+    }
+
+    document.addEventListener('keydown', keydown);
+
+    function keydown(e) {
+        switch (e.keyCode) {
+            case 37: {
+                return vel = {x: -1, y: 0}
+            }
+            case 38: {
+                return vel = {x: 0, y: -1}
+            }
+            case 39: {
+                return vel = {x: 1, y: 0}
+            }
+            case 40: {
+                return vel = {x: 0, y: 1}
+            }
+        }
+    }
+
+    function wormGame() {
+        ctx.fillStyle = background;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = worm_color;
+        for (let cell of worm) {
+            ctx.fillRect(cell.x * s, cell.y * s, s, s);
+        }
+        ctx.fillStyle = food_color;
+        ctx.fillRect(food.x * s, food.y * s, s, s);
+        pos.x += vel.x;
+        pos.y += vel.y;
+
+        if (pos.x < 0 || pos.x > t || pos.y < 0 || pos.y > t) {
+            init();
+        }
+        //dai ra
+        if (food.x === pos.x && food.y === pos.y) {
+            worm.push({...pos});
+            pos.x += vel.x;
+            pos.y += vel.y;
+            randomFood();
+        }
+        if (vel.x || vel.y) {
+            for (let cell of worm) {
+                if (cell.x === pos.x && cell.y === pos.y) {
+                    return init();
+
+                }
+            }
+            worm.push({...pos});
+            worm.shift();
+
+        }
+    };
+    setInterval(() => { // set time lien tuc. nguoc lai voi setTimeOut
+        requestAnimationFrame(wormGame);
+    }, 1200 / fr)
+</script>
+
+</body>
+</html>

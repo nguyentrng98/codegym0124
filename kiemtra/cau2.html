@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let xyz = [1, 5, 24, 6, 10, 50, -2];
+      function insertNumbertoArray() {
+        let a = +prompt("nhập số nguyên muốn thêm");
+        let index = +prompt("nhập vị trí muốn trèn");
+        if (index > xyz.length || index < 0) {
+          return abc;
+        } else {
+          xyz.splice(index, 0, a);
+          return xyz;
+        }
+      }
+
+      document.write(insertNumbertoArray());
+    </script>
+</body>
+</html>

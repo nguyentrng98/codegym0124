@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1.Biến toàn cục :(x , t) là 1 biến được khai bao tự do (không năm trong 1 cặp ngoặc nào cả)
+        -có thể sử dụng ở mọi nơi
+        2.biến cục bộ :(i , z , a) là biến được khai báo trong () hoặc {}
+        -chỉ sử dụng được tối đa là trong cặp ngoặc của nó được quy định
+    -->
+    <script>
+        let x =10;
+        let z = 100;
+        for (let i =0 ; i < x ,i++) {
+            z = 20;
+        }
+        console.log(z); //20
+        let t = 15 ;
+        function f1() {
+            let a = 1;
+        }
+    </script>
+</body>
+</html>
