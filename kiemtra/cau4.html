@@ -11,9 +11,9 @@
 </style>
 </head>
 <body>
-<canvas id="myCanvas" width="400" height="200"></canvas>
+<canvas style="width: 500px;height: 500px; border: 1px solid;" id="cv"></canvas>
 <script>
-    class Rectangle {
+    class HCN {
         constructor(x, y, width, height, color) {
             this.x = x;
             this.y = y;
@@ -22,15 +22,14 @@
             this.color = color;
         }
 
-        render(canvas) {
-            const ctx = canvas.getContext('2d');
-            ctx.fillStyle = this.color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
+        render() {
+            let can = document.getElementById('cv').getcontext('2d');
+            can.fillstyle = this.color;
+            can.fillreact(this.x , this.y , this.with , this.height);
         }
     }
-    const myRectangle = new Rectangle(50, 50, 200, 100, '#FF0000');
-    const canvas = document.getElementById('myCanvas');
-    myRectangle.render(canvas);
+    let HCN = new HCN(10 , 20,100,200,'blue');
+    HCn.render(25,50);
 </script>
 </body>
 </html>

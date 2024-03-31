@@ -7,11 +7,14 @@
 </head>
 <body>
     <script>
-         function SNT(a){
-            if(a < 2)
+         function isprime(a){
+            if(a < 2) {
                 return false;
-
-            for(let i=2 ; i<a-1 ;i++){
+            }
+            if (a==2) {
+                return true;
+            }
+            for(let i=2 ; i<=a ;i++){
                 if(a % i == 0){
                     return false;
                 }
@@ -21,13 +24,10 @@
 
         function sumOfListPrime(x){
             let tong = 0;
-            let a = 2;
-            let dem =0;
-           for(let i= 0;dem < x; i++) {
-                if(SNT(a) == true) {
-                    tong +=dem;
+           for(let i= 0;i <= x; i++) {
+                if(isprime(i)) {
+                    tong +=i
                 }
-                dem++;
             }
             return tong;
         }

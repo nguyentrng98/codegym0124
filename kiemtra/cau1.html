@@ -8,17 +8,12 @@
 <body>
     <script>
         //cau 1
-        let arr = [];
         function findAvg(arr){
-            let dem = 0;
-            let tong = 0;
-            let tb = 0 ;
+            let sum = 0;
             for(let i=0; i < arr.length ; i++){
-                tong+=arr[i];
-                dem++;
+                sum+=arr[i];
             }
-            tb = tong/dem;
-            return tb;
+            return sum/arr.length;
         }
         document.write("Điểm trung bình là: " + findAvg([1,2,3,4,5,6,7,8,9,10]));
     </script>

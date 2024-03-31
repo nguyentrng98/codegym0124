@@ -7,17 +7,22 @@
 </head>
 <body>
     <script>
-         let xyz = [1, 5, 24, 6, 10, 50, -2];
-      function insertNumbertoArray() {
-        let a = +prompt("nhập số nguyên muốn thêm");
-        let index = +prompt("nhập vị trí muốn trèn");
-        if (index > xyz.length || index < 0) {
-          return xyz;
-        } else {
-          xyz.splice(index, 0, a);
-          return xyz;
+      function insertNumbertoArray(arr , x , index) {
+        if (index > arr.length || index < 0) {
+          return arr;
         }
+        //arr.splice(index , 0 , x);
+        let newarr = [];
+        for (let i = index; i <=index ; i++) {
+          newarr.push(arr[i])
+        }
+        newarr.push(x);
+        for (let i = index ; i<= arr.length ; i++) {
+          newarr.push(arr[i]);
+        }
+        return newarr;
       }
+      //c3
 
       document.write(insertNumbertoArray());
     </script>
